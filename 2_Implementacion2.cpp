@@ -13,3 +13,12 @@ struct ConsoleBox {
     void new_text() {/*...*/}
     void set_text(const string &text) { cout << text << endl; }
 };
+ConsoleBox *consoleBox = new ConsoleBox;
+
+bool is_filename_valid(const char* filename) {
+    if (!filename || std::strlen(filename) == 0 || std::strlen(filename) >= 500) {
+        return false;
+    }
+
+    return true;
+}
