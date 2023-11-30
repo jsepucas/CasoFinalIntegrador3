@@ -22,3 +22,9 @@ bool is_filename_valid(const char* filename) {
 
     return true;
 }
+void load_script(const char* filename, bool show_script = false) {
+    if (!is_filename_valid(filename)) {
+        cerr << "El nombre no es valido u ocupa demasiados caracteres: " << filename << endl;
+        return;
+    }
+
