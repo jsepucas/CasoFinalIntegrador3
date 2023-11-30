@@ -58,3 +58,18 @@ void load_script(const char* filename, bool show_script = false) {
             cerr << "Error al cerrar el archivo: " << filename << endl;
             return;
         }
+        f = nullptr;
+
+        if (show_script) {
+            cout << ColorConsole::fg_blue << ColorConsole::bg_white;
+            cout << script << endl;
+        }
+        consoleBox->new_text();
+        consoleBox->set_text(script);
+    }
+    catch (...) {
+        cerr << "Error al leer el archivo: " << filename << endl;
+        if (f) {
+            fclose(f);
+        }
+    }
