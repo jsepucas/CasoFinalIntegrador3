@@ -68,8 +68,19 @@ void load_script(const char* filename, bool show_script = false) {
         consoleBox->set_text(script);
     }
     catch (...) {
-        cerr << "Error al leer el archivo: " << filename << endl;
-        if (f) {
-            fclose(f);
-        }
+        cerr << "Excepcion en la operacion con el archivo" << endl;
+        if (f) fclose(f);
+    }
+}
+
+    void load_script() {
+        char filename[500];
+        printf("Archivo: ");
+        scanf("%499s", filename);
+        load_script(filename, true);
+    }
+
+    int main() {
+        load_script();
+        return 0;
     }
