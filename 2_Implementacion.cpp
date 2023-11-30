@@ -32,7 +32,7 @@ void load_script(const char* filename, bool show_script = false) {
     try {
         f = fopen(filename, "rb");
         if (!f) {
-            cerr << "Error en la apertura de " << filename << endl;
+            cerr << "Error al intentar abrir " << filename << endl;
             return;
         }
         int c;
