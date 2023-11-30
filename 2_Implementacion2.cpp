@@ -47,3 +47,11 @@ void load_script(const char* filename, bool show_script = false) {
             fclose(f);
             return;
         }
+
+        if (ferror(f)) {
+            cerr << "Error durante la lectura del archivo: " << filename << endl;
+            fclose(f);
+            return;
+        }
+
+
