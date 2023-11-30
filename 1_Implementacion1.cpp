@@ -12,5 +12,16 @@ void load_script(const char* filename, bool show_script = false) {
         return;
     }
 
+    string line;
+    while(getline(file, line)) {
+        if(show_script) {
+            cout << line << endl;
+        }
+    }
 
+    if (!file.eof()) {
+        cout << "Ha ocurrido un error al leer el archivo." << endl;
+    }
+    file.close();
+}
 
